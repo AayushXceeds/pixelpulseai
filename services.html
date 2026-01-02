@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelPulseAI | Our Expertise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* --- DARK MODE OVERRIDES --- */
+        body {
+            background-color: #0b1120; /* Deep Midnight Background */
+            color: #f1f5f9;
+        }
+
+        /* Smooth "Zig-Zag" Layout */
+        .service-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5rem;
+            margin-bottom: 8rem;
+        }
+
+        /* Reverse every other row for the Zig-Zag effect */
+        .service-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .service-text {
+            flex: 1;
+        }
+
+        .service-media {
+            flex: 1.2;
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5); /* Stronger shadow for dark mode */
+            border-bottom: 4px solid var(--primary); 
+            height: 400px;
+        }
+
+        .service-media img, 
+        .service-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-row:hover .service-media img,
+        .service-row:hover .service-media video {
+            transform: scale(1.03);
+        }
+
+        /* Updated Text Colors for Dark Mode */
+        .section-title {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .service-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .service-desc {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .service-row, .service-row:nth-child(even) {
+                flex-direction: column;
+                gap: 2rem;
+                margin-bottom: 5rem;
+            }
+            .service-media {
+                width: 100%;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PixelPulse<span>AI</span></a>
+            <div class="hamburger">☰</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <div style="text-align: center; margin-bottom: 6rem;">
+            <h1 class="section-title">The 360° Growth Engine</h1>
+            <p style="max-width: 700px; margin: 0 auto; color: #94a3b8; font-size: 1.2rem;">
+                We deploy a full spectrum of digital warfare to capture market share. From backend algorithms to frontend aesthetics.
+            </p>
+        </div>
+
+        <div class="service-row">
+            <div class="service-text">
+                <h2 class="service-title">AI Programmatic Advertising</h2>
+                <p class="service-desc">Stop guessing where your customers are. Our proprietary AI analyzes millions of data points per second to bid on ad space across the web, ensuring your brand appears exactly when purchase intent is highest.</p>
+                <ul style="margin-bottom: 2rem; color: var(--primary); font-weight: 600;">
+                    <li>✓ Real-Time Bidding (RTB)</li>
+                    <li>✓ Cross-Device Tracking</li>
+                    <li>✓ Predictive CPA Modeling</li>
+                </ul>
+                <a href="contact.html" class="btn">Start Campaign</a>
+            </div>
+            <div class="service-media">
+                <video autoplay muted loop playsinline>
+                    <source src="cloth.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-text">
+                <h2 class="service-title">Luxury Brand Identity</h2>
+                <p class="service-desc">Your brand is your promise. We craft visual identities that exude authority and trust. From logo design to full design systems, we ensure you look as expensive as your service is.</p>
+                <p class="service-desc" style="font-size: 0.95rem; font-style: italic; color: var(--primary);">"Design is the silent ambassador of your brand."</p>
+                <a href="contact.html" style="color: var(--primary); font-weight: 700; border-bottom: 2px solid var(--primary); text-transform: uppercase; font-size: 0.9rem;">View Design Portfolio</a>
+            </div>
+            <div class="service-media">
+                <img src="use watch img.jpg" alt="Brand Design">
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-text">
+                <h2 class="service-title">Cinematic Production</h2>
+                <p class="service-desc">In the attention economy, the best story wins. We produce high-end commercial video content, drone cinematography, and 3D motion graphics that stop the scroll and hold attention.</p>
+                <ul style="margin-bottom: 2rem; color: var(--primary); font-weight: 600;">
+                    <li>✓ 4K Commercials</li>
+                    <li>✓ 3D Product Renders</li>
+                    <li>✓ Viral Short-Form Content</li>
+                </ul>
+                <a href="contact.html" class="btn">Get a Quote</a>
+            </div>
+            <div class="service-media">
+                <video autoplay muted loop playsinline>
+                    <source src="use watch.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-text">
+                <h2 class="service-title">Influencer & Social Viral Mechanics</h2>
+                <p class="service-desc">We don't just post; we spark movements. By leveraging our network of elite influencers and algorithmic content strategies, we turn your brand into a social conversation.</p>
+                <a href="contact.html" class="btn">Go Viral</a>
+            </div>
+            <div class="service-media">
+                <img src="perfume img.png" alt="Social Media Growth">
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-text">
+                <h2 class="service-title">Predictive Market Analytics</h2>
+                <p class="service-desc">Data is the new oil, and we are the refinery. We provide comprehensive dashboards that don't just show you what happened yesterday, but predict what will happen tomorrow.</p>
+                <ul style="margin-bottom: 2rem; color: var(--primary); font-weight: 600;">
+                    <li>✓ ROI Attribution Modeling</li>
+                    <li>✓ Competitor Spy Analytics</li>
+                    <li>✓ Customer Lifetime Value Prediction</li>
+                </ul>
+                <a href="contact.html" class="btn">See The Data</a>
+            </div>
+            <div class="service-media">
+                <video autoplay muted loop playsinline>
+                    <source src="use perfume.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-text">
+                <h2 class="service-title">Immersive Web Experiences</h2>
+                <p class="service-desc">The web is your digital showroom. We build award-winning, 3D-interactive websites that captivate users and convert traffic into loyal brand advocates. We build the future, pixel by pixel.</p>
+                <ul style="margin-bottom: 2rem; color: var(--primary); font-weight: 600;">
+                    <li>✓ 3D WebGL Interactions</li>
+                    <li>✓ Ultra-Fast Loading</li>
+                    <li>✓ Conversion Rate Optimization</li>
+                </ul>
+                <a href="contact.html" class="btn">Upgrade Your Site</a>
+            </div>
+            <div class="service-media">
+                <img src="clothimg.jpg" alt="Web Experience">
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-text">
+                <h2 class="service-title">Search Engine Hegemony (SEO)</h2>
+                <p class="service-desc">Ranking on the first page isn't enough; we aim for total domination. Our AI-driven content strategies align with semantic search algorithms to capture organic traffic before your competitors even wake up.</p>
+                <ul style="margin-bottom: 2rem; color: var(--primary); font-weight: 600;">
+                    <li>✓ Semantic Keyword Clustering</li>
+                    <li>✓ Voice Search Optimization</li>
+                    <li>✓ Authority Backlink Networks</li>
+                </ul>
+                <a href="contact.html" class="btn">Dominate Search</a>
+            </div>
+            <div class="service-media">
+                <img src="cloth2.jpg">
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> PixelPulseAI. All rights reserved.</p>
+            <div class="footer-links">
+                <button id="btn-terms">Terms & Conditions</button>
+                <button id="btn-privacy">Privacy Policy</button>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal-privacy" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p><strong>Last updated: [Date]</strong></p>
+            <p>At PixelPulseAI, we value your privacy.</p>
+        </div>
+    </div>
+
+    <div id="modal-terms" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Terms and Conditions</h2>
+            <p><strong>Last updated: [Date]</strong></p>
+            <p>Welcome to PixelPulseAI. By accessing this website, you agree to our premium terms of service.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

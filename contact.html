@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelPulseAI | Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* --- CLEAN WHITE THEME --- */
+        body {
+            background-color: #ffffff;
+            color: #0f172a; /* Dark Slate */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- CONTACT CONTAINER --- */
+        .contact-container {
+            flex: 1; 
+            max-width: 1000px;
+            margin: 6rem auto;
+            padding: 0 5%;
+            width: 100%;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            color: #0f172a;
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+            font-weight: 900;
+        }
+
+        /* --- FORM WRAPPER (Clean Card Style) --- */
+        .form-wrapper {
+            width: 100%;
+            background: #ffffff;
+            /* Subtle shadow to lift it off the white page */
+            box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.1); 
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr; /* Info on left, Form on right */
+            gap: 4rem;
+        }
+
+        /* --- LEFT SIDE: INFO --- */
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+            font-weight: 800;
+        }
+        .contact-info p {
+            color: #64748b;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start; /* Align to top */
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .icon-box {
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        .info-text strong {
+            display: block;
+            color: #0f172a;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+        
+        .info-link {
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .info-link:hover {
+            color: var(--primary); /* Uses your primary color from style.css */
+            text-decoration: underline;
+        }
+
+        /* --- RIGHT SIDE: FORM --- */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            background: #f8fafc; /* Very light gray */
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #3b82f6; 
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: #0f172a; /* Dark button */
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            align-self: flex-start;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .form-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 2rem;
+            }
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PixelPulse<span>AI</span></a>
+            <div class="hamburger">☰</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <div class="contact-header">
+            <h1 class="section-title">Get in Touch</h1>
+            <p style="color: #64748b; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">
+                / Start Your Project /
+            </p>
+        </div>
+
+        <div class="form-wrapper">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>Ready to transform your digital presence? Reach out to us via email or social media, or fill out the form to get started.</p>
+                
+                <div class="info-item">
+                    <div class="icon-box">✉️</div>
+                    <div class="info-text">
+                        <strong>Email Us</strong>
+                        <a href="mailto:pixelpulseai98@gmail.com" class="info-link">pixelpulseai98@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="icon-box">📸</div>
+                    <div class="info-text">
+                        <strong>Follow on Instagram</strong>
+                        <a href="https://www.instagram.com/pixelpulse_ai9?igsh=MXhsMWg4cjlzYWx6aQ==" target="_blank" class="info-link">@pixelpulse_ai9</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-box">📍</div>
+                    <div class="info-text">
+                        <strong>Headquarters</strong>
+                        <span>Digital Workspace</span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" action="#" method="POST">
+                <div>
+                    <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+                </div>
+                
+                <div>
+                    <input type="email" name="email" class="form-input" placeholder="Your Email Address" required>
+                </div>
+
+                <div>
+                    <select name="service" class="form-input" style="cursor: pointer; color: #64748b;">
+                        <option value="" disabled selected>What are you interested in?</option>
+                        <option value="branding" style="color: #0f172a;">Brand Identity</option>
+                        <option value="web" style="color: #0f172a;">Web Development</option>
+                        <option value="ai" style="color: #0f172a;">AI Integration</option>
+                        <option value="other" style="color: #0f172a;">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <textarea name="message" class="form-textarea" placeholder="Tell us about your project..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> PixelPulseAI. All rights reserved.</p>
+            <div class="footer-links">
+                <button id="btn-terms">Terms & Conditions</button>
+                <button id="btn-privacy">Privacy Policy</button>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal-privacy" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p>At PixelPulseAI, we value your privacy.</p>
+        </div>
+    </div>
+    <div id="modal-terms" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Terms and Conditions</h2>
+            <p>Welcome to PixelPulseAI.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
