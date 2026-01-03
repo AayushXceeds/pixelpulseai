@@ -11,10 +11,11 @@
         /* --- CLEAN WHITE THEME --- */
         body {
             background-color: #ffffff;
-            color: #0f172a; /* Dark Slate */
+            color: #0f172a;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            font-family: 'Inter', sans-serif;
         }
 
         /* --- CONTACT CONTAINER --- */
@@ -39,18 +40,18 @@
             font-weight: 900;
         }
 
-        /* --- FORM WRAPPER (Clean Card Style) --- */
+        /* --- FORM WRAPPER --- */
         .form-wrapper {
             width: 100%;
             background: #ffffff;
-            /* Subtle shadow to lift it off the white page */
             box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.1); 
             border: 1px solid #e2e8f0;
             border-radius: 24px;
             padding: 3rem;
             display: grid;
-            grid-template-columns: 1fr 1.5fr; /* Info on left, Form on right */
+            grid-template-columns: 1fr 1.5fr;
             gap: 4rem;
+            position: relative; /* For positioning success message */
         }
 
         /* --- LEFT SIDE: INFO --- */
@@ -68,15 +69,12 @@
         
         .info-item {
             display: flex;
-            align-items: flex-start; /* Align to top */
+            align-items: flex-start;
             gap: 1rem;
             margin-bottom: 1.5rem;
         }
         
-        .icon-box {
-            font-size: 1.2rem;
-            margin-top: 2px;
-        }
+        .icon-box { font-size: 1.2rem; margin-top: 2px; }
 
         .info-text strong {
             display: block;
@@ -90,10 +88,7 @@
             text-decoration: none;
             transition: color 0.3s;
         }
-        .info-link:hover {
-            color: var(--primary); /* Uses your primary color from style.css */
-            text-decoration: underline;
-        }
+        .info-link:hover { color: #3b82f6; text-decoration: underline; }
 
         /* --- RIGHT SIDE: FORM --- */
         .contact-form {
@@ -104,7 +99,7 @@
 
         .form-input, .form-textarea {
             width: 100%;
-            background: #f8fafc; /* Very light gray */
+            background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 8px;
             padding: 1rem;
@@ -121,14 +116,11 @@
             box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
         }
 
-        .form-textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
+        .form-textarea { resize: vertical; min-height: 150px; }
 
         /* Submit Button */
         .submit-btn {
-            background: #0f172a; /* Dark button */
+            background: #0f172a;
             color: white;
             border: none;
             padding: 1rem 2.5rem;
@@ -142,21 +134,30 @@
             align-self: flex-start;
         }
 
-        .submit-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
+        .submit-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* --- SUCCESS MESSAGE (Hidden by default) --- */
+        #status {
+            display: none; /* Hidden initially */
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: #ecfdf5; /* Light Green Bg */
+            border: 1px solid #10b981; /* Green Border */
+            color: #065f46; /* Dark Green Text */
+        }
+        #status.success { display: block; }
+        #status.error {
+            display: block;
+            background: #fef2f2;
+            border-color: #ef4444;
+            color: #991b1b;
         }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
-            .form-wrapper {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                padding: 2rem;
-            }
-            .section-title {
-                font-size: 2.5rem;
-            }
+            .form-wrapper { grid-template-columns: 1fr; gap: 3rem; padding: 2rem; }
+            .section-title { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -187,7 +188,7 @@
         <div class="form-wrapper">
             <div class="contact-info">
                 <h3>Contact Information</h3>
-                <p>Ready to transform your digital presence? Reach out to us via email or social media, or fill out the form to get started.</p>
+                <p>Ready to transform your digital presence? Reach out to us via email or social media.</p>
                 
                 <div class="info-item">
                     <div class="icon-box">✉️</div>
@@ -204,69 +205,102 @@
                         <a href="https://www.instagram.com/pixelpulse_ai9?igsh=MXhsMWg4cjlzYWx6aQ==" target="_blank" class="info-link">@pixelpulse_ai9</a>
                     </div>
                 </div>
-
-                <div class="info-item">
-                    <div class="icon-box">📍</div>
-                    <div class="info-text">
-                        <strong>Headquarters</strong>
-                        <span>Digital Workspace</span>
-                    </div>
-                </div>
             </div>
 
-            <form class="contact-form" action="https://formspree.io/f/xqeayzpg" method="POST">
-                <div>
-                    <input type="text" name="name" class="form-input" placeholder="Your Name" required>
-                </div>
+            <div class="form-content">
                 
-                <div>
-                    <input type="email" name="email" class="form-input" placeholder="Your Email Address" required>
-                </div>
+                <form id="my-form" class="contact-form" action="https://formspree.io/f/xqeayzpg" method="POST">
+                    
+                    <div>
+                        <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div>
+                        <input type="email" name="email" class="form-input" placeholder="Your Email Address" required>
+                    </div>
 
-                <div>
-                    <select name="service" class="form-input" style="cursor: pointer; color: #64748b;">
-                        <option value="" disabled selected>What are you interested in?</option>
-                        <option value="branding" style="color: #0f172a;">Brand Identity</option>
-                        <option value="web" style="color: #0f172a;">Web Development</option>
-                        <option value="ai" style="color: #0f172a;">AI Integration</option>
-                        <option value="other" style="color: #0f172a;">Other</option>
-                    </select>
-                </div>
+                    <div>
+                        <select name="service" class="form-input" style="cursor: pointer; color: #64748b;">
+                            <option value="" disabled selected>What are you interested in?</option>
+                            <option value="branding" style="color: #0f172a;">Brand Identity</option>
+                            <option value="web" style="color: #0f172a;">Web Development</option>
+                            <option value="ai" style="color: #0f172a;">AI Integration</option>
+                            <option value="other" style="color: #0f172a;">Other</option>
+                        </select>
+                    </div>
 
-                <div>
-                    <textarea name="message" class="form-textarea" placeholder="Tell us about your project..." required></textarea>
-                </div>
+                    <div>
+                        <textarea name="message" class="form-textarea" placeholder="Tell us about your project..." required></textarea>
+                    </div>
 
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+                    <button id="my-form-button" type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <div id="status"></div>
+            </div>
+
         </div>
     </main>
 
     <footer>
         <div class="footer-content">
             <p>&copy; <span id="year"></span> PixelPulseAI. All rights reserved.</p>
-            <div class="footer-links">
-                <button id="btn-terms">Terms & Conditions</button>
-                <button id="btn-privacy">Privacy Policy</button>
-            </div>
         </div>
     </footer>
 
-    <div id="modal-privacy" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Privacy Policy</h2>
-            <p>At PixelPulseAI, we value your privacy.</p>
-        </div>
-    </div>
-    <div id="modal-terms" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Terms and Conditions</h2>
-            <p>Welcome to PixelPulseAI.</p>
-        </div>
-    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Hamburger Logic
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            if(hamburger) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('nav-active');
+                });
+            }
+            document.getElementById('year').textContent = new Date().getFullYear();
 
+            // --- PROFESSIONAL FORM HANDLING ---
+            var form = document.getElementById("my-form");
+            
+            async function handleSubmit(event) {
+                event.preventDefault(); // STOP THE REDIRECT!
+                
+                var status = document.getElementById("status");
+                var data = new FormData(event.target);
+                
+                fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        // Success! Hide form, show message
+                        form.style.display = "none";
+                        status.innerHTML = "<h3>Message Sent!</h3><p>Thanks for reaching out. We will get back to you shortly.</p>";
+                        status.className = "success";
+                    } else {
+                        // Error from Formspree
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                            } else {
+                                status.innerHTML = "Oops! There was a problem submitting your form";
+                            }
+                            status.className = "error";
+                        })
+                    }
+                }).catch(error => {
+                    // Network Error
+                    status.innerHTML = "Oops! There was a problem submitting your form";
+                    status.className = "error";
+                });
+            }
+            form.addEventListener("submit", handleSubmit);
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
