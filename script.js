@@ -46,6 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'auto';
     }
 
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+      
+        if (!hamburger || !navLinks) return;
+      
+        hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          hamburger.setAttribute(
+            'aria-expanded',
+            navLinks.classList.contains('active')
+          );
+        });
+    });
+      
+
+
     // Event Listeners for opening
     if(btnPrivacy) btnPrivacy.addEventListener('click', () => openModal(modalPrivacy));
     if(btnTerms) btnTerms.addEventListener('click', () => openModal(modalTerms));
@@ -63,9 +80,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
