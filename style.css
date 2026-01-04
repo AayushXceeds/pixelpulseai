@@ -358,4 +358,65 @@ body.modal-open {
     padding: 0.2rem 0.6rem;
     z-index: 10;
   }
+  /* =========================
+   ABOUT PAGE – MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+
+    /* Main about section wrapper */
+    .about,
+    .about-section,
+    .about-content {
+      padding: 3rem 1.5rem !important;
+      text-align: center;
+    }
+  
+    /* Big stacked heading fix */
+    .about h1,
+    .about-title,
+    .about-heading {
+      font-size: 2.2rem !important;
+      line-height: 1.25;
+      margin-bottom: 1.2rem;
+    }
+  
+    /* Subheading / tagline */
+    .about h2,
+    .about-subtitle {
+      font-size: 1.2rem !important;
+      margin-bottom: 1.5rem;
+    }
+  
+    /* Paragraph readability */
+    .about p {
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 100%;
+      margin: 0 auto 1.5rem;
+    }
+  
+    /* IMAGE FIX (very important) */
+    .about-image,
+    .about img {
+      width: 100%;
+      max-width: 260px;
+      margin: 2rem auto;
+      display: block;
+    }
+  
+    /* If image has decorative background block */
+    .about-image::before,
+    .about-image::after {
+      display: none;
+    }
+  
+    /* Prevent awkward side alignment */
+    .about-grid,
+    .about-layout {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
   
