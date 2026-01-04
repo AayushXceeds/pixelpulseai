@@ -359,64 +359,72 @@ body.modal-open {
     z-index: 10;
   }
   /* =========================
-   ABOUT PAGE – MOBILE FIX
+   ABOUT PAGE – MOBILE FIX (EXACT)
 ========================= */
 @media (max-width: 768px) {
 
-    /* Main about section wrapper */
-    .about,
-    .about-section,
-    .about-content {
-      padding: 3rem 1.5rem !important;
+    /* 1️⃣ Kill the forced 2-column layout (inline style override) */
+    .container > .grid-3 {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2.5rem !important;
+      align-items: center !important;
+    }
+  
+    /* 2️⃣ Main manifesto heading */
+    .section-title {
+      font-size: 2.2rem !important;
+      line-height: 1.25;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  
+    /* 3️⃣ Image fix (center + remove heavy desktop look) */
+    .container > .grid-3 img {
+      width: 100%;
+      max-width: 260px;
+      margin: 0 auto;
+      box-shadow: 10px 10px 0 var(--primary) !important;
+    }
+  
+    /* 4️⃣ Text block under image */
+    .container > .grid-3 > div {
       text-align: center;
     }
   
-    /* Big stacked heading fix */
-    .about h1,
-    .about-title,
-    .about-heading {
-      font-size: 2.2rem !important;
-      line-height: 1.25;
-      margin-bottom: 1.2rem;
+    .container > .grid-3 h2 {
+      font-size: 1.5rem !important;
+      margin-bottom: 1rem !important;
     }
   
-    /* Subheading / tagline */
-    .about h2,
-    .about-subtitle {
-      font-size: 1.2rem !important;
-      margin-bottom: 1.5rem;
-    }
-  
-    /* Paragraph readability */
-    .about p {
-      font-size: 1rem;
+    .container > .grid-3 p {
+      font-size: 1rem !important;
       line-height: 1.7;
-      max-width: 100%;
-      margin: 0 auto 1.5rem;
+      margin-bottom: 1.2rem !important;
     }
   
-    /* IMAGE FIX (very important) */
-    .about-image,
-    .about img {
-      width: 100%;
-      max-width: 260px;
-      margin: 2rem auto;
-      display: block;
+    /* 5️⃣ Quote styling */
+    .container > .grid-3 div[style*="border-left"] {
+      border-left: none !important;
+      border-top: 3px solid var(--primary);
+      padding-left: 0 !important;
+      padding-top: 1rem;
+      margin-top: 1.5rem;
+      font-style: italic;
+      text-align: center;
     }
   
-    /* If image has decorative background block */
-    .about-image::before,
-    .about-image::after {
-      display: none;
+    /* 6️⃣ Stats section spacing */
+    section[style*="background-color"] {
+      padding: 3.5rem 1.5rem !important;
     }
   
-    /* Prevent awkward side alignment */
-    .about-grid,
-    .about-layout {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center;
-      gap: 2rem;
+    section[style*="background-color"] h2 {
+      font-size: 1.6rem;
+    }
+  
+    section[style*="background-color"] div[style*="font-size: 3.5rem"] {
+      font-size: 2.5rem !important;
     }
   }
   
