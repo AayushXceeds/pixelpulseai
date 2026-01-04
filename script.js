@@ -60,6 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
           );
         });
     });
+    document.body.classList.add('modal-open');   // when opening modal
+    document.body.classList.remove('modal-open'); // when closing modal
+
       
 
 

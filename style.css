@@ -223,10 +223,39 @@
   footer {
     background: var(--secondary);
     color: #94a3b8;
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.5rem;
     text-align: center;
     border-top: 3px solid var(--primary);
   }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .footer-links button {
+    background: transparent;
+    border: 1px solid rgba(212,175,55,0.4);
+    color: #e5e7eb;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+  
+  .footer-links button:hover {
+    background: var(--primary);
+    color: var(--secondary);
+  }
+  
   
   /* =========================
      📱 MOBILE FIXES (KEY PART)
@@ -274,5 +303,59 @@
     .section-title {
       font-size: 2rem;
     }
+  }
+  /* =========================
+   MODAL FIX (CRITICAL)
+   ========================= */
+
+/* Lock background when modal is open */
+body.modal-open {
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  /* Full-screen overlay */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    z-index: 5000;
+  }
+  
+  /* Show modal */
+  .modal-overlay.active {
+    display: flex;
+  }
+  
+  /* Modal box */
+  .modal-content {
+    background: #ffffff;
+    color: #020617;
+    width: 100%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    border-top: 4px solid var(--primary);
+  }
+  
+  /* Close button */
+  .close-modal {
+    position: sticky;
+    top: 0;
+    float: right;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #020617;
+    background: #ffffff;
+    padding: 0.2rem 0.6rem;
+    z-index: 10;
   }
   
